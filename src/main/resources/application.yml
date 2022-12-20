@@ -1,0 +1,24 @@
+spring:
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/final_db
+    password: 25td701
+    username: postgres
+
+
+
+
+
+
+  jpa:
+    show-sql: true
+#  flyway:
+#    baseline-on-migrate: true
+#    locations:
+#      classpath: db/migration
+
+  freemarker:
+    allow-request-override: true
+
+

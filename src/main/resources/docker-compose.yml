@@ -1,0 +1,26 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: "postgres"
+
+    environment:
+
+      POSTGRES_DRIVER: "org.postgresql.Driver"
+      POSTGRES_DB: "final_db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "25td701"
+    volumes:
+     - .:/docker-entrypoint-initdb.d
+
+    ports:
+
+      - 5432:5432
+
+  springboot:
+    image: final-project:latest
+    container_name: "final-project"
+    ports:
+      - 8080:8080
+    links:
+      - postgres
